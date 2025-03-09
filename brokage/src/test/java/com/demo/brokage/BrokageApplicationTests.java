@@ -31,27 +31,7 @@ class BrokageApplicationTests {
 	void contextLoads() {
 	}
 
-@Mock
-private ProductRepository orderRepository;
-	@InjectMocks
-	private ProductService orderService;
 
-	@Mock
-	AssetService assetService ;
-	@Test public void testCreateOrder() {
-		Product order = new Product();
-		order.setCustomerId("500"); order.setAssetName("TRY");
-		order.setSide(ProductSide.BUY);
-		order.setSize(100);
-		order.setPrice(10.0);
-		when(orderRepository.save(any(Product.class))).thenReturn(order);
-		Optional<Asset> assesList = Optional.empty();
-
-		//when(assetService.getAssetByCustomerIdAndAssetName(any(), any())).thenReturn( assesList);
-
-		//Product createdOrder = orderService.createOrder(order.getCustomerId() ,order.getAssetName(),order.getSide(),order.getSize(),order.getPrice());
-		//assertEquals(ProductStatus.PENDING, createdOrder.getStatus());
-	}
 
 
 }
